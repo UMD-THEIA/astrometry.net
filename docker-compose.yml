@@ -1,0 +1,15 @@
+services:
+  webservice:
+    image: astrometrynet/webservice
+    volumes:
+      - './astrometry_indexes:/index'
+    ports:
+      - '8000:8000'
+  solver:
+    command: /bin/bash
+    image: astrometrynet/solver
+    tty: true
+    stdin_open: true
+    volumes:
+      - './astrometry_indexes:/usr/local/data'
+

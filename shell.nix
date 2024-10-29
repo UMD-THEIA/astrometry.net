@@ -33,5 +33,11 @@ pkgs.mkShell {
     pkg-config
     wcslib
   ];
-
+  shellHook =
+    ''
+      make -j
+      make py -j
+      make extra
+      make install INSTALL_DIR=./build
+    '';
 }
