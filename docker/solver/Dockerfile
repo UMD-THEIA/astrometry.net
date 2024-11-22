@@ -44,7 +44,7 @@ RUN for x in \
     numpy \
     scipy \
     matplotlib \
-    fitsio \
+    # fitsio \
     astropy \
     ; do pip3 install --no-cache-dir $x; done
 
